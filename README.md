@@ -18,7 +18,8 @@ From inside ferra:
 | `:plugin_update [name]` | Update one or all, showing the new commits first |
 | `:plugin_remove name` | Remove one |
 | `:plugin_list` | What's installed, and at which commit |
-| `:plugin_reload [name]` | Load again after changing it |
+| `:plugin_install` | Install what `plugins.toml` lists but isn't installed (a new machine) |
+| `:plugin_reload` | Load every plugin again after changing one |
 
 Plugins are git clones in `~/.local/share/ferra/plugins/`. What you've
 installed, and the exact commit of each, is kept in `plugins.toml` and
