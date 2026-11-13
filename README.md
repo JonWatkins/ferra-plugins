@@ -65,28 +65,35 @@ options = { tab-width = 4 }
 language-server = { command = "zls" }
 ```
 
-For highlighting, add the grammar's generated C source and its queries;
-ferra compiles it with the user's C compiler when the pack is installed:
+For highlighting, name the grammar's repository and the commit to build,
+as Helix does; ferra fetches it and compiles it with the user's C
+compiler when the pack is installed:
 
 ```toml
 [grammars.zig]
-path = "tree-sitter-zig"      # the folder with src/parser.c ("." if left out)
-symbol = "tree_sitter_zig"    # the default: tree_sitter_<language>
-queries = "queries/zig"       # highlights, injections, locals and indents .scm (the default)
+git = "https://github.com/tree-sitter-grammars/tree-sitter-zig"
+rev = "6479aa13f32f701c383083d8b28360ebd682fb7d"   # a full commit hash
 ```
+
+The grammar repository's own queries are used unless the pack has its
+own in `queries/<language>/` (`highlights.scm`, `injections.scm`,
+`locals.scm`, `indents.scm`), file by file. Queries written for Neovim
+work as they are. See `languages/lua` and `languages/zig`, and ferra's
+guide, [Language packs](https://github.com/JonWatkins/ferra/blob/main/docs/GUIDE.md#language-packs).
 
 List a pack in `index.toml` with `language = true`.
 
 ## Official plugins
 
-Plugins maintained with ferra live in this repository, one folder each
-under `plugins/`, and are listed without a `repo`:
+Plugins maintained with ferra live in this repository, one folder each:
+language packs under `languages/`, other plugins under `plugins/`. They're
+listed without a `repo`:
 
 ```toml
 [[plugin]]
 name = "zig"
-path = "plugins/zig"
-description = "Zig: file types, comments and zls"
+path = "languages/zig"
+description = "Zig: highlighting, indentation, comments and zls"
 language = true
 ```
 
