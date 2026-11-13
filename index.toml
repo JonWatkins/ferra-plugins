@@ -1,0 +1,15 @@
+# The ferra plugin directory: the plugins `:plugin_browse` lists.
+#
+# Add yours with a pull request: one [[plugin]] table, kept in name order.
+#
+#   [[plugin]]
+#   name = "todos"                        # what :plugin_install calls it (unique,
+#                                         # lowercase letters, digits and -)
+#   repo = "someone/ferra-todos"          # its GitHub repository
+#   description = "List the file's TODOs in the sidebar"
+#   tags = ["sidebar", "notes"]           # optional
+#   language = false                      # optional: true for a language pack
+#
+# The repository must have a ferra-plugin.toml at its root (see README.md).
+
+version = 1
