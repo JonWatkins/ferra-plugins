@@ -1,0 +1,16 @@
+name = "lua"
+version = "0.1.0"
+description = "Lua: highlighting, indentation, comments and lua-language-server"
+ferra = ">=0.1"
+
+[languages.lua]
+extensions = ["lua"]
+shebangs = ["lua", "luajit"]
+comment = "--"
+language-server = { command = "lua-language-server", roots = [".luarc.json", ".luarc.jsonc", ".stylua.toml", "stylua.toml"] }
+
+# The grammar's own highlight, injection and locals queries are used; the
+# indentation rules are ours (queries/lua/indents.scm).
+[grammars.lua]
+git = "https://github.com/tree-sitter-grammars/tree-sitter-lua"
+rev = "10fe0054734eec83049514ea2e718b2a56acd0c9"

@@ -13,3 +13,17 @@
 # The repository must have a ferra-plugin.toml at its root (see README.md).
 
 version = 1
+
+[[plugin]]
+name = "lua"
+path = "languages/lua"
+description = "Lua: highlighting, indentation, comments and lua-language-server"
+tags = ["language"]
+language = true
+
+[[plugin]]
+name = "zig"
+path = "languages/zig"
+description = "Zig: highlighting, indentation, comments and zls"
+tags = ["language"]
+language = true
