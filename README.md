@@ -65,9 +65,17 @@ options = { tab-width = 4 }
 language-server = { command = "zls" }
 ```
 
-Coming: the grammar's C source and its highlight queries, compiled with
-your C compiler when the pack is installed. List a pack in `index.toml`
-with `language = true`.
+For highlighting, add the grammar's generated C source and its queries;
+ferra compiles it with the user's C compiler when the pack is installed:
+
+```toml
+[grammars.zig]
+path = "tree-sitter-zig"      # the folder with src/parser.c ("." if left out)
+symbol = "tree_sitter_zig"    # the default: tree_sitter_<language>
+queries = "queries/zig"       # highlights.scm, injections.scm, locals.scm (the default)
+```
+
+List a pack in `index.toml` with `language = true`.
 
 ## Getting listed
 
