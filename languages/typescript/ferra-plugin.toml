@@ -1,0 +1,25 @@
+name = "typescript"
+version = "0.1.0"
+description = "TypeScript and TSX: highlighting, indentation, comments and typescript-language-server"
+ferra = ">=0.1"
+
+[languages.typescript]
+extensions = ["ts", "mts", "cts"]
+shebangs = ["deno", "ts-node"]
+comment = "//"
+language-server = { command = "typescript-language-server", args = ["--stdio"], roots = ["package.json", "tsconfig.json"] }
+
+[languages.tsx]
+extensions = ["tsx"]
+comment = "//"
+language-server = { command = "typescript-language-server", args = ["--stdio"], roots = ["package.json", "tsconfig.json"], language-id = "typescriptreact" }
+
+[grammars.typescript]
+git = "https://github.com/tree-sitter/tree-sitter-typescript"
+rev = "f975a621f4e7f532fe322e13c4f79495e0a7b2e7"  # v0.23.2
+path = "typescript"
+
+[grammars.tsx]
+git = "https://github.com/tree-sitter/tree-sitter-typescript"
+rev = "f975a621f4e7f532fe322e13c4f79495e0a7b2e7"  # v0.23.2
+path = "tsx"

@@ -1,0 +1,13 @@
+name = "rust"
+version = "0.1.0"
+description = "Rust: highlighting, indentation, comments and rust-analyzer"
+ferra = ">=0.1"
+
+[languages.rust]
+extensions = ["rs"]
+comment = "//"
+language-server = { command = "rust-analyzer", roots = ["Cargo.toml"] }
+
+[grammars.rust]
+git = "https://github.com/tree-sitter/tree-sitter-rust"
+rev = "77a3747266f4d621d0757825e6b11edcbf991ca5"  # v0.24.2

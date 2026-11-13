@@ -15,6 +15,27 @@
 version = 1
 
 [[plugin]]
+name = "c"
+path = "languages/c"
+description = "C: highlighting, indentation, comments and clangd"
+tags = ["language"]
+language = true
+
+[[plugin]]
+name = "cpp"
+path = "languages/cpp"
+description = "C++: highlighting, indentation, comments and clangd"
+tags = ["language"]
+language = true
+
+[[plugin]]
+name = "css"
+path = "languages/css"
+description = "CSS: highlighting, indentation, comments and its language server"
+tags = ["language"]
+language = true
+
+[[plugin]]
 name = "dockerfile"
 path = "languages/dockerfile"
 description = "Dockerfile: highlighting, comments and docker-langserver"
@@ -29,9 +50,30 @@ tags = ["language"]
 language = true
 
 [[plugin]]
+name = "go"
+path = "languages/go"
+description = "Go: highlighting, indentation, comments and gopls"
+tags = ["language"]
+language = true
+
+[[plugin]]
+name = "html"
+path = "languages/html"
+description = "HTML: highlighting, indentation, comments and its language server"
+tags = ["language"]
+language = true
+
+[[plugin]]
 name = "java"
 path = "languages/java"
 description = "Java: highlighting, indentation, comments and jdtls"
+tags = ["language"]
+language = true
+
+[[plugin]]
+name = "javascript"
+path = "languages/javascript"
+description = "JavaScript and JSX: highlighting, indentation, comments and typescript-language-server"
 tags = ["language"]
 language = true
 
@@ -57,9 +99,30 @@ tags = ["language"]
 language = true
 
 [[plugin]]
+name = "python"
+path = "languages/python"
+description = "Python: highlighting, comments and pyright"
+tags = ["language"]
+language = true
+
+[[plugin]]
 name = "ruby"
 path = "languages/ruby"
 description = "Ruby: highlighting, indentation, comments and ruby-lsp"
+tags = ["language"]
+language = true
+
+[[plugin]]
+name = "rust"
+path = "languages/rust"
+description = "Rust: highlighting, indentation, comments and rust-analyzer"
+tags = ["language"]
+language = true
+
+[[plugin]]
+name = "typescript"
+path = "languages/typescript"
+description = "TypeScript and TSX: highlighting, indentation, comments and typescript-language-server"
 tags = ["language"]
 language = true
 

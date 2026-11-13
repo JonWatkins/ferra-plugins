@@ -1,0 +1,13 @@
+name = "html"
+version = "0.1.0"
+description = "HTML: highlighting, indentation, comments and its language server"
+ferra = ">=0.1"
+
+[languages.html]
+extensions = ["html", "htm"]
+block-comment = ["<!--", "-->"]
+language-server = { command = "vscode-html-language-server", args = ["--stdio"] }
+
+[grammars.html]
+git = "https://github.com/tree-sitter/tree-sitter-html"
+rev = "5a5ca8551a179998360b4a4ca2c0f366a35acc03"  # v0.23.2
