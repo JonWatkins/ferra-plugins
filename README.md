@@ -81,6 +81,10 @@ own in `queries/<language>/` (`highlights.scm`, `injections.scm`,
 work as they are. See `languages/lua` and `languages/zig`, and ferra's
 guide, [Language packs](https://github.com/JonWatkins/ferra/blob/main/docs/GUIDE.md#language-packs).
 
+A pack for a file type ferra has no icon for can give one, for the file
+tree with a Nerd Font: `icon = "…"` and `icon-color = "#rrggbb"` in its
+`[languages.<name>]`.
+
 List a pack in `index.toml` with `language = true`.
 
 ## Official plugins
