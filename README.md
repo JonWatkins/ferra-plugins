@@ -49,10 +49,25 @@ from the plugin). The API (`editor.command`, `editor.on`, `editor.map`,
 `ctx:popup{...}`, sidebar views...) is in ferra's guide under
 [Lua plugins](https://github.com/JonWatkins/ferra/blob/main/docs/GUIDE.md#lua-plugins).
 
-A **language pack** adds a language: its file types and settings, its
-tree-sitter highlight queries, its language server, and the grammar's C
-source, which ferra compiles with your C compiler when it's installed.
-(Coming: the format is still being designed.)
+A **language pack** adds a language ferra doesn't know, with
+`[languages.<name>]` tables in `ferra-plugin.toml`, written as in ferra's
+`config.toml` (a pack needs no Lua):
+
+```toml
+name = "zig"
+version = "0.1.0"
+description = "Zig: file types, comments and zls"
+
+[languages.zig]
+extensions = ["zig", "zon"]
+comment = "//"
+options = { tab-width = 4 }
+language-server = { command = "zls" }
+```
+
+Coming: the grammar's C source and its highlight queries, compiled with
+your C compiler when the pack is installed. List a pack in `index.toml`
+with `language = true`.
 
 ## Getting listed
 
