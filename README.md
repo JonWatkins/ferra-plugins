@@ -14,7 +14,7 @@ From inside ferra:
 | Command | |
 |---------|---|
 | `:plugin_browse` | Pick from the plugins listed here |
-| `:plugin_install owner/repo` | Install any plugin on GitHub, listed or not (`owner/repo@tag` for a tag) |
+| `:plugin_install owner/repo` | Install any plugin on GitHub, listed or not (`owner/repo@tag` for a tag, `owner/repo//folder` for one in a folder) |
 | `:plugin_update [name]` | Update one or all, showing the new commits first |
 | `:plugin_remove name` | Remove one |
 | `:plugin_list` | What's installed, and at which commit |
@@ -76,6 +76,23 @@ queries = "queries/zig"       # highlights, injections, locals and indents .scm 
 ```
 
 List a pack in `index.toml` with `language = true`.
+
+## Official plugins
+
+Plugins maintained with ferra live in this repository, one folder each
+under `plugins/`, and are listed without a `repo`:
+
+```toml
+[[plugin]]
+name = "zig"
+path = "plugins/zig"
+description = "Zig: file types, comments and zls"
+language = true
+```
+
+ferra installs one by cloning only its folder (`:plugin_install
+JonWatkins/ferra-plugins//plugins/zig`), and updates it only for commits
+that touch that folder. Official plugins follow `main`.
 
 ## Getting listed
 

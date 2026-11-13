@@ -1,18 +1,38 @@
-"""Checks index.toml: its shape, unique names, and name order.
+"""Checks index.toml: its shape, unique names and name order, and that each
+plugin kept in this repository (`path`, no `repo`) is there, with a
+ferra-plugin.toml of the same name.
 
 Run with `python3 scripts/check_index.py` (Python 3.11+, for tomllib).
 """
 
+import os
 import re
 import sys
 import tomllib
 
 NAME = re.compile(r"^[a-z0-9][a-z0-9-]*$")
 REPO = re.compile(r"^[A-Za-z0-9-]+/[A-Za-z0-9._-]+$")
-KEYS = {"name", "repo", "description", "tags", "language"}
+PATH = re.compile(r"^[A-Za-z0-9._-]+(/[A-Za-z0-9._-]+)*$")
+KEYS = {"name", "repo", "path", "description", "tags", "language"}
+
+
+def check_folder(where: str, name: str, folder: str) -> list[str]:
+    """A plugin kept in this repository: its manifest is there and agrees."""
+    manifest = os.path.join(folder, "ferra-plugin.toml")
+    if not os.path.isfile(manifest):
+        return [f"{where}: no ferra-plugin.toml in {folder}"]
+    try:
+        with open(manifest, "rb") as f:
+            found = tomllib.load(f).get("name")
+    except tomllib.TOMLDecodeError as e:
+        return [f"{where}: {manifest}: {e}"]
+    if found != name:
+        return [f"{where}: {manifest} is named {found!r}"]
+    return []
 
 
 def check(path: str) -> list[str]:
+    root = os.path.dirname(os.path.abspath(path))
     with open(path, "rb") as f:
         index = tomllib.load(f)
     errors = []
@@ -28,8 +48,18 @@ def check(path: str) -> list[str]:
         if not isinstance(name, str) or not NAME.match(name):
             errors.append(f"{where}: name must be lowercase letters, digits and -")
         repo = plugin.get("repo")
-        if not isinstance(repo, str) or not REPO.match(repo):
+        folder = plugin.get("path")
+        if repo is not None and (not isinstance(repo, str) or not REPO.match(repo)):
             errors.append(f"{where}: repo must be owner/name")
+        if folder is not None and (
+            not isinstance(folder, str) or not PATH.match(folder) or ".." in folder.split("/")
+        ):
+            errors.append(f"{where}: path must be a folder like plugins/{name}")
+            folder = None
+        if repo is None and folder is None:
+            errors.append(f"{where}: needs a repo, or a path in this repository")
+        if repo is None and folder is not None:
+            errors.extend(check_folder(where, name, os.path.join(root, folder)))
         if not isinstance(plugin.get("description"), str) or not plugin["description"]:
             errors.append(f"{where}: needs a description")
         tags = plugin.get("tags", [])
