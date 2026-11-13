@@ -72,7 +72,7 @@ ferra compiles it with the user's C compiler when the pack is installed:
 [grammars.zig]
 path = "tree-sitter-zig"      # the folder with src/parser.c ("." if left out)
 symbol = "tree_sitter_zig"    # the default: tree_sitter_<language>
-queries = "queries/zig"       # highlights.scm, injections.scm, locals.scm (the default)
+queries = "queries/zig"       # highlights, injections, locals and indents .scm (the default)
 ```
 
 List a pack in `index.toml` with `language = true`.
