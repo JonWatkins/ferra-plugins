@@ -15,9 +15,51 @@
 version = 1
 
 [[plugin]]
+name = "dockerfile"
+path = "languages/dockerfile"
+description = "Dockerfile: highlighting, comments and docker-langserver"
+tags = ["language"]
+language = true
+
+[[plugin]]
+name = "elixir"
+path = "languages/elixir"
+description = "Elixir: highlighting, indentation, comments and elixir-ls"
+tags = ["language"]
+language = true
+
+[[plugin]]
+name = "java"
+path = "languages/java"
+description = "Java: highlighting, indentation, comments and jdtls"
+tags = ["language"]
+language = true
+
+[[plugin]]
 name = "lua"
 path = "languages/lua"
 description = "Lua: highlighting, indentation, comments and lua-language-server"
+tags = ["language"]
+language = true
+
+[[plugin]]
+name = "nix"
+path = "languages/nix"
+description = "Nix: highlighting, indentation, comments and nil"
+tags = ["language"]
+language = true
+
+[[plugin]]
+name = "php"
+path = "languages/php"
+description = "PHP: highlighting, indentation, comments and intelephense"
+tags = ["language"]
+language = true
+
+[[plugin]]
+name = "ruby"
+path = "languages/ruby"
+description = "Ruby: highlighting, indentation, comments and ruby-lsp"
 tags = ["language"]
 language = true
 

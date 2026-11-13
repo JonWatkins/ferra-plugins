@@ -1,0 +1,14 @@
+name = "dockerfile"
+version = "0.1.0"
+description = "Dockerfile: highlighting, comments and docker-langserver"
+ferra = ">=0.1"
+
+[languages.dockerfile]
+extensions = ["dockerfile", "containerfile"]
+file-names = ["Dockerfile", "Containerfile"]
+comment = "#"
+language-server = { command = "docker-langserver", args = ["--stdio"] }
+
+[grammars.dockerfile]
+git = "https://github.com/camdencheek/tree-sitter-dockerfile"
+rev = "971acdd908568b4531b0ba28a445bf0bb720aba5"

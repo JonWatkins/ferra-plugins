@@ -1,0 +1,14 @@
+name = "nix"
+version = "0.1.0"
+description = "Nix: highlighting, indentation, comments and nil"
+ferra = ">=0.1"
+
+[languages.nix]
+extensions = ["nix"]
+comment = "#"
+options = { tab-width = 2 }
+language-server = { command = "nil", roots = ["flake.nix"] }
+
+[grammars.nix]
+git = "https://github.com/nix-community/tree-sitter-nix"
+rev = "64d4f7827dc1a8c7c88108ffdb47b961a729df05"

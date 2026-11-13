@@ -1,0 +1,15 @@
+name = "elixir"
+version = "0.1.0"
+description = "Elixir: highlighting, indentation, comments and elixir-ls"
+ferra = ">=0.1"
+
+[languages.elixir]
+extensions = ["ex", "exs"]
+shebangs = ["elixir"]
+comment = "#"
+options = { tab-width = 2 }
+language-server = { command = "elixir-ls", roots = ["mix.exs"] }
+
+[grammars.elixir]
+git = "https://github.com/elixir-lang/tree-sitter-elixir"
+rev = "cb32ccbe17c67037b09e31bf9beb22cdae6ed8e9"
