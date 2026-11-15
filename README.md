@@ -87,10 +87,33 @@ tree with a Nerd Font: `icon = "…"` and `icon-color = "#rrggbb"` in its
 
 List a pack in `index.toml` with `language = true`.
 
+A **theme pack** carries colour themes, each a file of the same
+`"scope" = style` lines as ferra's `[theme]` (see ferra's
+[default.toml](https://github.com/JonWatkins/ferra/blob/main/src/config/default.toml)),
+laid over ferra's own colours, so a theme can set as few or as many as it
+likes (a light one sets them all):
+
+```toml
+name = "daybreak"
+version = "0.1.0"
+description = "Daybreak: a warm light theme, paper and ink"
+
+[themes.daybreak]               # the id color-theme names
+name = "Daybreak"               # as the theme picker shows it
+kind = "light"                  # or "dark"
+file = "theme.toml"
+```
+
+Once installed, `:theme` lists it (each theme is shown as the selection
+moves to it). List a theme pack in `index.toml` with `tags = ["theme"]`:
+`:plugin_browse theme` lists those. See `themes/daybreak` and
+`themes/ember`.
+
 ## Official plugins
 
 Plugins maintained with ferra live in this repository, one folder each:
-language packs under `languages/`, other plugins under `plugins/`. They're
+language packs under `languages/`, colour themes under `themes/`, other
+plugins under `plugins/`. They're
 listed without a `repo`:
 
 ```toml

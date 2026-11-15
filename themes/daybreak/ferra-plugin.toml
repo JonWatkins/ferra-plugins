@@ -1,0 +1,9 @@
+name = "daybreak"
+version = "0.1.0"
+description = "Daybreak: a warm light theme, paper and ink"
+ferra = ">=0.1"
+
+[themes.daybreak]
+name = "Daybreak"
+kind = "light"
+file = "theme.toml"

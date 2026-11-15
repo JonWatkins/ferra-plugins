@@ -36,6 +36,12 @@ tags = ["language"]
 language = true
 
 [[plugin]]
+name = "daybreak"
+path = "themes/daybreak"
+description = "Daybreak: a warm light colour theme, paper and ink"
+tags = ["theme", "light"]
+
+[[plugin]]
 name = "dockerfile"
 path = "languages/dockerfile"
 description = "Dockerfile: highlighting, comments and docker-langserver"
@@ -48,6 +54,12 @@ path = "languages/elixir"
 description = "Elixir: highlighting, indentation, comments and elixir-ls"
 tags = ["language"]
 language = true
+
+[[plugin]]
+name = "ember"
+path = "themes/ember"
+description = "Ember: a warm dark colour theme, charcoal and amber"
+tags = ["theme", "dark"]
 
 [[plugin]]
 name = "go"

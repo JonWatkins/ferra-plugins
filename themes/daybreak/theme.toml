@@ -1,0 +1,258 @@
+# Daybreak: a warm light theme, paper and ink, for ferra.
+#
+# The same scopes as ferra's own theme (default.toml's [theme]); each is
+# laid over it, and your config's [theme] over this.
+
+"ui.background" = { bg = "#fbfaf7" }
+"ui.text" = "#2b2f36"
+"ui.cursorline" = { bg = "#f0eee8" }
+"ui.selection" = { bg = "#cfdcf5" }
+"ui.search.match" = { fg = "#fbfaf7", bg = "#a8730f" }
+# The match the cursor's on while the find box (<Space>/) has focus.
+"ui.search.current" = { fg = "#fbfaf7", bg = "#c25a17", modifiers = ["bold"] }
+# The other uses of the symbol under the cursor (a language server's).
+"ui.highlight.reference" = { bg = "#e3e8f2" }
+
+# Syntax highlighting. Scopes fall back to their parent, so "function.method"
+# uses "function" unless it's set itself.
+"keyword" = "#7b4ec0"
+"function" = "#2f5fc4"
+"function.macro" = "#0f7fa8"
+"type" = "#00839a"
+"constructor" = "#00839a"
+"module" = "#2f5fc4"
+"string" = "#4e8a1e"
+"escape" = "#0f7fa8"
+"comment" = { fg = "#8b90a6", modifiers = ["italic"] }
+"constant" = "#c25a17"
+"number" = "#c25a17"
+"boolean" = "#c25a17"
+"variable.builtin" = "#c8364f"
+"variable.parameter" = "#a8730f"
+"property" = "#138a76"
+"attribute" = "#a8730f"
+"label" = "#0f7fa8"
+"tag" = "#c8364f"
+"operator" = "#2a7fa6"
+"punctuation" = "#5f6888"
+# Markdown and other prose.
+"text.title" = { fg = "#2f5fc4", modifiers = ["bold"] }
+"text.strong" = { modifiers = ["bold"] }
+"text.emphasis" = { modifiers = ["italic"] }
+"text.literal" = "#4e8a1e"
+"text.uri" = { fg = "#0f7fa8", modifiers = ["underlined"] }
+"text.reference" = "#0f7fa8"
+"ui.window.separator" = "#d3cfc5"
+# Virtual text: a language server's inlay hints (types, parameter names).
+"ui.virtual.inlay-hint" = { fg = "#8a8f99", modifiers = ["italic"] }
+"ui.virtual.inlay-hint.type" = { fg = "#8a8f99", modifiers = ["italic"] }
+"ui.virtual.inlay-hint.parameter" = { fg = "#8a8f99", modifiers = ["italic"] }
+# For plugins' decorations (ctx:decorate): backgrounds for problems, and
+# text after or inside lines. Any other scope works too ("comment"...).
+"ui.decoration.error" = { bg = "#f6d8dc" }
+"ui.decoration.warning" = { bg = "#f5e9cc" }
+"ui.decoration.info" = { bg = "#dce8f6" }
+"ui.decoration.text" = { fg = "#8a8f99", modifiers = ["italic"] }
+# Git blame for the cursor's line, after it.
+"ui.virtual.blame" = { fg = "#8b90a6", modifiers = ["italic"] }
+"ui.virtual.conflict" = { fg = "#6878a8", modifiers = ["italic"] }
+# Merge conflicts in the text: each side's rows, and the marker lines.
+"ui.conflict.ours" = { bg = "#d9efee" }
+"ui.conflict.theirs" = { bg = "#dbe3f6" }
+"ui.conflict.base" = { bg = "#e8e6e0" }
+"ui.conflict.marker" = { fg = "#4a5170", bg = "#dde3f0", modifiers = ["bold"] }
+# Git changes in the gutter (against what's staged).
+"ui.gutter.added" = "#4e8a1e"
+"ui.gutter.changed" = "#2f5fc4"
+"ui.gutter.removed" = "#c8364f"
+# The status bar (statusline-style = "vscode"): its colour, and the text
+# on it.
+"ui.statusbar" = { fg = "#ffffff", bg = "#3b6fd1" }
+# The activity bar down the left: its icons, the shown view's, and the mark
+# beside that.
+"ui.activitybar" = { fg = "#8a8f99", bg = "#fbfaf7" }
+"ui.activitybar.active" = { fg = "#303a5c", bg = "#e7e4dc", modifiers = ["bold"] }
+"ui.activitybar.marker" = { fg = "#2f5fc4", bg = "#e7e4dc" }
+# The sidebar's file tree (<Space>e).
+"ui.sidebar" = { fg = "#4a5170", bg = "#f4f2ed" }
+"ui.sidebar.title" = { fg = "#2f5fc4", modifiers = ["bold"] }
+"ui.sidebar.marker" = "#8a8f99"
+# Folders' icons (icons = "nerd"; files' are coloured by their type).
+"ui.sidebar.folder.icon" = "#2f5fc4"
+"ui.sidebar.folder" = "#303a5c"
+"ui.sidebar.file" = "#4a5170"
+"ui.sidebar.current" = { fg = "#0f7fa8", modifiers = ["bold"] }
+"ui.sidebar.selected" = { bg = "#cfdcf5" }
+"ui.sidebar.modified" = "#a8730f"
+"ui.sidebar.empty" = { fg = "#8a8f99", modifiers = ["italic"] }
+# The Search view: its files' names, the matching lines, what matched in
+# them, and each file's count.
+"ui.sidebar.search.file" = { fg = "#303a5c", modifiers = ["bold"] }
+"ui.sidebar.search.line" = "#6a7189"
+"ui.sidebar.search.match" = { fg = "#9a6b00", bg = "#f7ecd2", modifiers = ["bold"] }
+"ui.sidebar.search.count" = { fg = "#303a5c", bg = "#d3cfc5" }
+# The replace preview: what goes, and what takes its place.
+"ui.sidebar.search.removed" = { fg = "#c8364f", bg = "#f8dede", modifiers = ["crossed_out"] }
+"ui.sidebar.search.added" = { fg = "#4e8a1e", bg = "#dff0df", modifiers = ["bold"] }
+# Git in the sidebar: the file tree's names and letters, and Source Control.
+"ui.sidebar.git.modified" = "#a8730f"
+"ui.sidebar.git.added" = "#4e8a1e"
+"ui.sidebar.git.deleted" = "#c8364f"
+"ui.sidebar.git.renamed" = "#0f7fa8"
+"ui.sidebar.git.conflict" = { fg = "#c8364f", modifiers = ["bold"] }
+"ui.sidebar.git.folder" = "#9a7a35"
+"ui.sidebar.git.header" = { fg = "#2f5fc4", modifiers = ["bold"] }
+"ui.sidebar.git.branch" = "#8a8f99"
+# The full-screen git view (<Space>g).
+"ui.indent-guide" = "#e2ded5"
+"ui.indent-guide.active" = "#b4b0a6"
+"ui.bracket.1" = "#a8730f"
+"ui.bracket.2" = "#7b4ec0"
+"ui.bracket.3" = "#2f5fc4"
+"ui.bracket.match" = { bg = "#d5dcef", modifiers = ["bold"] }
+"ui.breadcrumbs" = { fg = "#6a7189", bg = "#fbfaf7" }
+"ui.breadcrumbs.file" = "#303a5c"
+"ui.breadcrumbs.symbol" = "#4a5170"
+"ui.breadcrumbs.separator" = "#8b90a6"
+"ui.tabbar" = { bg = "#f4f2ed" }
+"ui.tabbar.tab" = { fg = "#6a7189", bg = "#f4f2ed" }
+"ui.tabbar.active" = { fg = "#1d2026", bg = "#fbfaf7", modifiers = ["bold"] }
+"ui.tabbar.marker" = "#2f5fc4"
+"ui.tabbar.modified" = "#a8730f"
+"ui.tabbar.close" = "#8a8f99"
+"ui.tabbar.border" = { fg = "#e2ded5", bg = "#f4f2ed" }
+"ui.settings" = { fg = "#2b2f36", bg = "#fbfaf7" }
+"ui.settings.title" = { fg = "#303a5c", modifiers = ["bold"] }
+"ui.settings.border" = "#d3cfc5"
+"ui.settings.category" = "#4a5170"
+"ui.settings.category.shown" = { fg = "#2f5fc4", modifiers = ["bold"] }
+"ui.settings.category.selected" = { fg = "#303a5c", bg = "#cfdcf5", modifiers = ["bold"] }
+"ui.settings.selected" = { bg = "#f0eee8" }
+"ui.settings.name" = { fg = "#303a5c", modifiers = ["bold"] }
+"ui.settings.description" = "#6a7189"
+"ui.settings.value" = { fg = "#2b2f36", bg = "#e2ded5" }
+"ui.settings.value.on" = { fg = "#4e8a1e", bg = "#e2ded5", modifiers = ["bold"] }
+"ui.settings.modified" = "#2f5fc4"
+"ui.settings.hint" = "#8b90a6"
+"ui.git" = { fg = "#2b2f36", bg = "#fbfaf7" }
+"ui.git.border" = "#d3cfc5"
+"ui.git.border.focused" = "#2f5fc4"
+"ui.git.title" = { fg = "#5c626d", modifiers = ["bold"] }
+"ui.git.title.focused" = { fg = "#2f5fc4", modifiers = ["bold"] }
+"ui.git.selected" = { bg = "#cfdcf5" }
+"ui.git.selected.unfocused" = { bg = "#ebe8e1" }
+"ui.git.dim" = "#8a8f99"
+"ui.git.current" = { fg = "#4e8a1e", modifiers = ["bold"] }
+"ui.git.hash" = "#a8730f"
+"ui.git.diff.added" = "#4e8a1e"
+"ui.git.diff.removed" = "#c8364f"
+"ui.git.diff.hunk" = "#0f7fa8"
+"ui.git.diff.header" = { fg = "#4a5170", modifiers = ["bold"] }
+"ui.git.diff.selected" = { bg = "#ebe8e1" }
+"ui.git.hint" = "#8b90a6"
+# The blame view's bar: its file's newest changes brightest, its oldest
+# faintest, and lines not committed yet.
+"ui.git.blame.heat0" = "#c25a17"
+"ui.git.blame.heat1" = "#a8730f"
+"ui.git.blame.heat2" = "#a8916a"
+"ui.git.blame.heat3" = "#d3cfc5"
+"ui.git.blame.uncommitted" = "#4e8a1e"
+"ui.git.blame.summary" = "#303a5c"
+# A change side by side (v): lines removed on the left, added on the
+# right, and the filler where a side has nothing.
+"ui.git.side.removed" = { bg = "#f8dede" }
+"ui.git.side.added" = { bg = "#dff0df" }
+"ui.git.side.filler" = "#e4e0d8"
+# The tabs at the top of the sidebar, when plugins add views.
+"ui.sidebar.tabs" = { bg = "#f0eee8" }
+"ui.sidebar.tab" = { fg = "#8a8f99", bg = "#f0eee8" }
+"ui.sidebar.tab.shown" = { fg = "#4a5170", bg = "#f4f2ed" }
+"ui.sidebar.tab.active" = { fg = "#2f5fc4", bg = "#f4f2ed", modifiers = ["bold"] }
+# The terminal panel (<Space>t): its title row, and its background.
+"ui.terminal" = { bg = "#fbfaf7" }
+"ui.terminal.title" = { fg = "#5c626d", bg = "#f0eee8" }
+"ui.terminal.title.focused" = { fg = "#2f5fc4", bg = "#f0eee8", modifiers = ["bold"] }
+"ui.terminal.hint" = { fg = "#8b90a6", bg = "#f0eee8" }
+"ui.terminal.exited" = { fg = "#a8730f", bg = "#f0eee8" }
+# The find box (<Space>/, <Space>h).
+"ui.find" = { fg = "#2b2f36", bg = "#f0eee8" }
+"ui.find.border" = "#b4b0a6"
+"ui.find.label" = "#8a8f99"
+"ui.find.label.focused" = { fg = "#2f5fc4", modifiers = ["bold"] }
+"ui.find.field" = { fg = "#5c626d", bg = "#e2ded5" }
+"ui.find.field.focused" = { fg = "#2b2f36", bg = "#d8d4ca" }
+"ui.find.field.selected" = { bg = "#cfdcf5" }
+"ui.find.toggle" = { fg = "#5c626d", bg = "#e2ded5" }
+"ui.find.toggle.on" = { fg = "#fbfaf7", bg = "#2f5fc4", modifiers = ["bold"] }
+"ui.find.toggle.label" = "#5c626d"
+"ui.find.count" = "#5c626d"
+"ui.find.none" = "#c8364f"
+"ui.find.hint" = "#8b90a6"
+# A plugin's input box's placeholder (shown while it's empty).
+"ui.input.placeholder" = { fg = "#8b90a6", modifiers = ["italic"] }
+# The splash screen shown when starting without a file.
+"ui.splash.logo" = { fg = "#2f5fc4", modifiers = ["bold"] }
+"ui.splash.version" = "#8b90a6"
+"ui.splash.key" = "#a8730f"
+"ui.splash.text" = "#4a5170"
+"ui.fold" = { fg = "#8a8f99", modifiers = ["italic"] }
+# Diagnostics from language servers: underlines in the text, the line
+# number, and the message after the line.
+"diagnostic.error" = { underline = "#c8364f", modifiers = ["underlined"] }
+"diagnostic.warning" = { underline = "#a8730f", modifiers = ["underlined"] }
+"diagnostic.info" = { underline = "#2f5fc4", modifiers = ["underlined"] }
+"diagnostic.hint" = { underline = "#8a8f99", modifiers = ["underlined"] }
+"ui.diagnostic.error" = "#c8364f"
+"ui.diagnostic.warning" = "#a8730f"
+"ui.diagnostic.info" = "#2f5fc4"
+"ui.diagnostic.hint" = "#8a8f99"
+"ui.statusline.diagnostic.error" = { fg = "#c8364f", modifiers = ["bold"] }
+"ui.statusline.diagnostic.warning" = { fg = "#a8730f", modifiers = ["bold"] }
+"ui.statusline.diagnostic.info" = { fg = "#0f7fa8", modifiers = ["bold"] }
+"ui.wrap-marker" = "#b4b0a6"
+"ui.popup" = { fg = "#2b2f36", bg = "#f0eee8" }
+"ui.popup.border" = "#b4b0a6"
+"ui.popup.title" = { fg = "#2f5fc4", modifiers = ["bold"] }
+# The menu bar, its open menu's title and the letters that open them; and
+# in a menu, the keys beside its items and its separators.
+"ui.menubar" = { fg = "#4a5170", bg = "#fbfaf7" }
+"ui.menubar.open" = { fg = "#303a5c", bg = "#cfdcf5" }
+"ui.menubar.letter" = { modifiers = ["underlined"] }
+# The lines under the menu bar and above the terminal panel.
+"ui.menubar.border" = { fg = "#d3cfc5", bg = "#fbfaf7" }
+"ui.terminal.border" = { fg = "#d3cfc5" }
+"ui.panel.tab" = { fg = "#8a8f99", bg = "#f0eee8" }
+"ui.panel.tab.shown" = { fg = "#303a5c", bg = "#f0eee8", modifiers = ["bold"] }
+"ui.panel.detail" = "#8b90a6"
+"ui.menu.key" = "#8a8f99"
+"ui.menu.separator" = "#d3cfc5"
+"ui.popup.prompt" = "#2f5fc4"
+"ui.popup.selected" = { bg = "#cfdcf5" }
+"ui.popup.match" = { fg = "#a8730f", modifiers = ["bold"] }
+"ui.popup.detail" = "#8a8f99"
+"ui.linenr" = "#b4b0a6"
+"ui.linenr.selected" = { fg = "#3a3e47", modifiers = ["bold"] }
+"ui.statusline" = { fg = "#5c626d", bg = "#f0eee8" }
+"ui.statusline.normal" = { fg = "#fbfaf7", bg = "#2f5fc4", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "#fbfaf7", bg = "#4e8a1e", modifiers = ["bold"] }
+"ui.statusline.replace" = { fg = "#fbfaf7", bg = "#c8364f", modifiers = ["bold"] }
+"ui.statusline.command" = { fg = "#fbfaf7", bg = "#a8730f", modifiers = ["bold"] }
+"ui.statusline.operator" = { fg = "#fbfaf7", bg = "#2f5fc4", modifiers = ["bold"] }
+"ui.statusline.visual" = { fg = "#fbfaf7", bg = "#7b4ec0", modifiers = ["bold"] }
+"ui.statusline.picker" = { fg = "#fbfaf7", bg = "#0f7fa8", modifiers = ["bold"] }
+"ui.statusline.sidebar" = { fg = "#fbfaf7", bg = "#4e8a1e", modifiers = ["bold"] }
+"ui.statusline.find" = { fg = "#fbfaf7", bg = "#c25a17", modifiers = ["bold"] }
+"ui.statusline.terminal" = { fg = "#fbfaf7", bg = "#7b4ec0", modifiers = ["bold"] }
+"ui.statusline.popup" = { fg = "#fbfaf7", bg = "#0f7fa8", modifiers = ["bold"] }
+"ui.statusline.input" = { fg = "#fbfaf7", bg = "#a8730f", modifiers = ["bold"] }
+"ui.statusline.pending" = { fg = "#a8730f", bg = "#f0eee8" }
+"ui.statusline.lsp" = { fg = "#8a8f99", bg = "#f0eee8" }
+"ui.statusline.branch" = { fg = "#4a5170", bg = "#f0eee8" }
+"ui.statusline.git" = { fg = "#fbfaf7", bg = "#4e8a1e", modifiers = ["bold"] }
+"ui.statusline.recording" = { fg = "#c8364f", bg = "#f0eee8", modifiers = ["bold"] }
+"ui.statusline.modified" = { fg = "#a8730f", bg = "#f0eee8", modifiers = ["bold"] }
+# The status lines of windows other than the active one.
+"ui.statusline.inactive" = { fg = "#8e93a5", bg = "#f4f2ed" }
+"ui.command-line" = "#2b2f36"
+"ui.message.info" = "#5c626d"
+"ui.message.error" = { fg = "#c8364f", modifiers = ["bold"] }

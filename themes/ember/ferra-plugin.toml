@@ -1,0 +1,9 @@
+name = "ember"
+version = "0.1.0"
+description = "Ember: a warm dark theme, charcoal and amber"
+ferra = ">=0.1"
+
+[themes.ember]
+name = "Ember"
+kind = "dark"
+file = "theme.toml"
