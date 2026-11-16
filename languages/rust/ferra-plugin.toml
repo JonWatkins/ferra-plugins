@@ -1,12 +1,15 @@
 name = "rust"
-version = "0.1.0"
+version = "0.1.1"
 description = "Rust: highlighting, indentation, comments and rust-analyzer"
 ferra = ">=0.1"
 
 [languages.rust]
 extensions = ["rs"]
 comment = "//"
-language-server = { command = "rust-analyzer", roots = ["Cargo.toml"] }
+# rust-analyzer checks into a folder of its own (target/rust-analyzer), so
+# its `cargo check` doesn't wait on cargo build or cargo test for target/'s
+# lock, or they on it.
+language-server = { command = "rust-analyzer", roots = ["Cargo.toml"], settings = { "rust-analyzer" = { cargo = { targetDir = true } } } }
 
 [grammars.rust]
 git = "https://github.com/tree-sitter/tree-sitter-rust"
