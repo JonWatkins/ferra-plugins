@@ -1,6 +1,6 @@
 name = "python"
 version = "0.1.0"
-description = "Python: highlighting, comments and pyright"
+description = "Python: highlighting, indentation, comments and pyright"
 ferra = ">=0.1"
 
 [languages.python]

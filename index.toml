@@ -113,7 +113,7 @@ language = true
 [[plugin]]
 name = "python"
 path = "languages/python"
-description = "Python: highlighting, comments and pyright"
+description = "Python: highlighting, indentation, comments and pyright"
 tags = ["language"]
 language = true
 
